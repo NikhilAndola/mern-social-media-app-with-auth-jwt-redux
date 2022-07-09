@@ -36,8 +36,6 @@ const Auth = () => {
         console.log("response",res);
     }
     const googleFailure = (error) => {
-        console.log("env file", process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID)
-        console.log("env file mango", process.env.REACT_APP_mango_app)
         console.log("Google signIn was unsuccessful. Try again later", error)
     }
     return (
@@ -100,7 +98,7 @@ const Auth = () => {
                     </Button>
 
                     <GoogleLogin
-                        clientId="21465095507-f5r2h6kftga8k33vhkme90g2haecnq18.apps.googleusercontent.com"
+                        clientId= {process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID}
                         render={(renderProps) => (
                             <Button
                                 className={classes.googleButton}
